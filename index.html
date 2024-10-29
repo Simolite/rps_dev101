@@ -13,7 +13,7 @@
     <div class="game_buttons">
         <button onclick="rps.rock();"><img src="icones/rock.svg" alt="Rock"><p>Rock</p></button>
         <button onclick="rps.paper();"><img src="icones/paper.svg" alt="Paper"><p>Paper</p></button>
-        <button onclick="rps.scissors();"><img src="icones/scisorsse.svg" alt="Scissors"><p>Scissors</p></button>
+        <button onclick="rps.scissors();"><img src="icones/scissors.svg" alt="Scissors"><p>Scissors</p></button>
     </div>
     <ul class="score_text">You have :
         <li><span class="wins_text"></span> wins</li>
@@ -24,7 +24,13 @@
         <button onclick="score();"><p>Display Score</p></button>
         <button onclick="resetScore();"><p>Reset Score</p></button>            
     </div>
-    <p class="round_details"></p>
-    <!--<button onclick="round_details ();">testing</button>-->
+    <p class="round_details">Chose <span>rock</span> , <span>paper</span> or <span>scissors</span> to play the game</p>
+    <div class="visual_result">
+        <img src="icones/user_icon.svg" alt="user_icon">
+        <span class="user_move_icon"><img src="icones/paper.svg" alt=""></span>
+        <strong><u>VS</u></strong>
+        <span class="pc_move_icon"><img src="icones/scissors.svg" alt=""></span>
+        <img src="icones/computer_icon.svg" alt="pc_icon">
+    </div>
 </body>
 </html>

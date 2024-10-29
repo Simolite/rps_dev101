@@ -13,17 +13,17 @@ if (Math.random()<=1/3){
     pcMove = 'Paper';
 } else {
     rdNum = 3;
-    pcMove = 'Scissors';
+    pcMove = 'scissors';
 };
 resultNum = userNum - rdNum ;
 if (resultNum === 0){
-    result = `Tie both you and the computer picked ${pcMove}`;
+    result = `Tie both you and the computer picked <span> ${pcMove}</span>`;
     wlt.ties ++;
 }else if (resultNum === 1 || resultNum === -2){
-    result = `You Won !! you picked ${userMove} and the coputer picked ${pcMove}`;
+    result = `You Won !! you picked <span>${userMove}</span> and the coputer picked <span>${pcMove}</span>`;
     wlt.wins ++;
 }else{
-    result = `You lost you picked ${userMove} and the coputer picked ${pcMove}`;
+    result = `You lost you picked <span>${userMove}</span> and the coputer picked <span>${pcMove}</span>`;
     wlt.loses ++;
 };
 localStorage.setItem('wltN',JSON.stringify(wlt));
@@ -31,7 +31,7 @@ document.querySelector(".wins_text").innerHTML = wlt.wins;
 document.querySelector(".loses_text").innerHTML = wlt.loses;
 document.querySelector(".ties_text").innerHTML = wlt.ties;
 round_details ();
-return result,resultNum;
+return result,resultNum,userMove;
 };
 function rock(){
 userMove='Rock';
@@ -44,7 +44,7 @@ userNum=2;
 game();
 };
 function scissors(){
-userMove='Scissors';
+userMove='scissors';
 userNum=3;
 game();
 };
@@ -59,6 +59,7 @@ score_verify();
 document.querySelector(".wins_text").innerHTML = wlt.wins;
 document.querySelector(".loses_text").innerHTML = wlt.loses;
 document.querySelector(".ties_text").innerHTML = wlt.ties;
+document.querySelector('.round_details').innerHTML= "Chose <span>rock</span> , <span>paper</span> or <span>scissors</span> to play the game";
 };
 let rps = {
 rock,
@@ -74,12 +75,7 @@ document.querySelector(".wins_text").innerHTML = wlt.wins;
 document.querySelector(".loses_text").innerHTML = wlt.loses;
 document.querySelector(".ties_text").innerHTML = wlt.ties;
 };
-/*function round_details () {
-if (resultNum === 0){
-    document.querySelector('.round_details').innerHTML=;
-}else if (resultNum === 1 || resultNum === -2){
-    console.log('win');
-}else{
-    console.log('lose')
+function round_details () {
+document.querySelector('.round_details').innerHTML= result;
+document.querySelector('.user_move_icon').innerHTML= `<img src="icones/${userMove}.svg" alt="user_move_icon">`;document.querySelector('.pc_move_icon').innerHTML= `<img src="icones/${pcMove}.svg" alt="user_move_icon">`;
 };
-};*/
