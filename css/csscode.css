@@ -1,5 +1,6 @@
 body {
     margin: 0;
+    padding-bottom: 500px;
 }
 button img {
     width: 50px;
@@ -57,4 +58,19 @@ li {
 }
 .continue_button {
     color: rgb(89, 0, 255);
+}
+.round_details {
+    text-align: center;
+}
+.round_details span {
+    color: red;
+}
+.visual_result {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 10px;
+}
+.visual_result img {
+    width: 50px;
 }
